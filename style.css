@@ -6,44 +6,51 @@
 
 body {
     background-color: #121212;
-    height: 100vh;
+    min-height: 100dvh;
     width: 100vw;
-    overflow: hidden; 
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    gap: 8px;
     font-family: sans-serif;
     color: white;
+    touch-action: none;
+    user-select: none;
+    -webkit-user-select: none;
+    overflow: hidden;
+    padding: 12px 0;
 }
 
 h2 {
-    font-size: 24px;
-    letter-spacing: 1px;
+    font-size: clamp(1.2rem, 3.5vw, 1.8rem);
+    margin-bottom: 2px;
 }
 
 #msg {
-    font-size: 14px;
+    font-size: clamp(0.75rem, 2vw, 0.95rem);
     color: #aaa;
+    margin-bottom: 8px;
 }
 
 #container {
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
     gap: 10px;
 }
 
 #gameBoard {
     border: 3px solid #333;
-    max-height: 60vh;
-    max-width: 90vw;
-    aspect-ratio: 1 / 1;
+    background-color: #212121;
+    width: min(72vmin, 420px) !important;
+    height: min(72vmin, 420px) !important;
+    display: block;
+    touch-action: none;
 }
 
 #score {
-    font-size: 20px;
+    font-size: clamp(0.95rem, 2.5vw, 1.2rem);
     font-weight: bold;
 }
 
@@ -53,14 +60,14 @@ h2 {
     border: 2px solid aqua;
     border-radius: 6px;
     padding: 8px 24px;
-    font-size: 16px;
+    font-size: clamp(0.85rem, 2.5vw, 1rem);
     font-weight: bold;
     cursor: pointer;
     text-transform: uppercase;
-    transition: background-color 0.2s, color 0.2s;
+    letter-spacing: 1px;
 }
 
-#startBtn:hover {
+#startBtn:active {
     background-color: aqua;
     color: #212121;
 }
